@@ -23,8 +23,7 @@ export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {
  * @returns {number}
  */
 export const getSquareOfCircle = (radius) => {
-    const square = Math.PI * (radius ** 2);
-    return square
+    return Math.PI * (radius ** 2)
 };
 
 /**
@@ -36,20 +35,21 @@ export const getSquareOfCircle = (radius) => {
  * @returns {number}
  */
 export const getFixedValue = (number, accuracy) => {
-    let rounded;
-    const rest = number % 1;
-    const integer = number - rest;
+    // let rounded;
+    // const rest = number % 1;
+    // const integer = number - rest;
 
-    if (accuracy === 1) {
-        rounded = (Math.round(rest * 10)) / 10;
-    } else if (accuracy === 2) {
-        rounded = (Math.round(rest * 100)) / 100;
-    } else if (accuracy === 3) {
-        rounded = (Math.round(rest * 1000)) / 1000;
-    } else {
-        alert('This value of accuracy is not correct');
-    }
-    return integer + rounded;
+    // if (accuracy === 1) {
+    //     rounded = (Math.round(rest * 10)) / 10;
+    // } else if (accuracy === 2) {
+    //     rounded = (Math.round(rest * 100)) / 100;
+    // } else if (accuracy === 3) {
+    //     rounded = (Math.round(rest * 1000)) / 1000;
+    // } else {
+    //     alert('This value of accuracy is not correct');
+    // }
+    // return integer + rounded;
+    return Math.round(number*(10**accuracy))/(10**accuracy);
 
 };
 
