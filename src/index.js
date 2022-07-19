@@ -22,7 +22,7 @@ export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {
  * @returns {number}
  */
 export const getSquareOfCircle = (radius) => {
-  return Math.PI * radius ** 2
+  return Math.PI * (radius ** 2)
 };
 
 /**
@@ -44,11 +44,14 @@ export const getFixedValue = (number, accuracy) => {
  * @returns {number}
  */
 export const getFlooroCeil = (number) => {
-  if (number % 2 === 0){
-    let number = Math.floor(number)
+  const integer = number - (number % 1);
+  let result;
+  if (integer % 2 === 0) {
+      result = Math.floor(number);
   } else {
-    let number = Math.ceil(number)
+      result = Math.ceil(number);
   }
+  return result
 };
 
 /**
