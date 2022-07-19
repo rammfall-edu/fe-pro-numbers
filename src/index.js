@@ -7,7 +7,13 @@
  * @param {number} maxSecond
  * @returns {number}
  */
-export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {};
+export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {
+    const minNum = Math.min(minFirst, minSecond);
+    const maxNum = Math.max(maxFirst, maxSecond);
+    const result = minNum * maxNum;
+    return result
+};
+
 
 /**
  * Функция принимает один числовой аргумент, это радиус круга. Функция должна
@@ -16,7 +22,9 @@ export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {};
  * @param {number} radius
  * @returns {number}
  */
-export const getSquareOfCircle = (radius) => {};
+export const getSquareOfCircle = (radius) => {
+    return Math.PI * (radius ** 2)
+};
 
 /**
  * Функция принимает число и точность к которой нужно округлить
@@ -26,7 +34,24 @@ export const getSquareOfCircle = (radius) => {};
  * @param {number} accuracy
  * @returns {number}
  */
-export const getFixedValue = (number, accuracy) => {};
+export const getFixedValue = (number, accuracy) => {
+    // let rounded;
+    // const rest = number % 1;
+    // const integer = number - rest;
+
+    // if (accuracy === 1) {
+    //     rounded = (Math.round(rest * 10)) / 10;
+    // } else if (accuracy === 2) {
+    //     rounded = (Math.round(rest * 100)) / 100;
+    // } else if (accuracy === 3) {
+    //     rounded = (Math.round(rest * 1000)) / 1000;
+    // } else {
+    //     alert('This value of accuracy is not correct');
+    // }
+    // return integer + rounded;
+    return Math.round(number*(10**accuracy))/(10**accuracy);
+
+};
 
 /**
  * Если целая часть числа четная, то срабатывает Math.floor для этого числа
@@ -34,7 +59,18 @@ export const getFixedValue = (number, accuracy) => {};
  * @param {number} number
  * @returns {number}
  */
-export const getFlooroCeil = (number) => {};
+export const getFlooroCeil = (number) => {
+    const integer = number - (number % 1);
+    let result;
+
+    if (integer % 2 === 0) {
+        result = Math.floor(number);
+    } else {
+        result = Math.ceil(number);
+    }
+    return result
+};
+
 
 /**
  * Мы передаем два числа, от какого и до какого числа и функция должна
@@ -44,4 +80,6 @@ export const getFlooroCeil = (number) => {};
  * @param {number} to
  * @returns {number}
  */
-export const randomizer = (from, to) => {};
+export const randomizer = (from, to) => {
+    return Math.floor(Math.random() * (to - from + 1) + from);
+};
