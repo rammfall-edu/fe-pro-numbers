@@ -8,9 +8,9 @@
  * @returns {number}
  */
 export const minMaxMultiply = (minFirst, minSecond, maxFirst, maxSecond) => {
-  let minNumber = Math.min(minFirst, minSecond);
-  let maxNumber = Math.min(maxFirst, maxSecond);
-  let result = minNumber * maxNumber;
+  const minNumber = Math.min(minFirst, minSecond);
+  const maxNumber = Math.min(maxFirst, maxSecond);
+  const result = minNumber * maxNumber;
   return result;
 };
 
